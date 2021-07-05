@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  factorio:
+    image: skyblue3350/factorio-server
+    build: ./
+    ports:
+      - 34197:34197/udp
+    volumes:
+      - ./data:/world
+    environment:
+      FACTORIO_SAVE_NAME: world-hoge
+      EXTRA_ARGS: --server-settings /world/server-settings.json
